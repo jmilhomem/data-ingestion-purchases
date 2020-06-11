@@ -37,6 +37,12 @@ https://www.kaggle.com/c/acquire-valued-shoppers-challenge/data?select=offers.cs
 4. Remove temporary log files
 
 ## Dependencies:
+To execute the ingestion process(__main_ingestion.py__ application):
+* a Postgres database instance created at AWS RDS.
+* config.ini file filled and available on __~/.config__ folder
+* python 3.6
+* make
+
 To execute the whole pipeline (__main_etl_processes.py__ application):
 * get dbt installed and the dbt project cloned. Check more details here.
 * a Postgres database instance created at AWS RDS.
@@ -44,16 +50,10 @@ To execute the whole pipeline (__main_etl_processes.py__ application):
 * python 3.6
 * make  
 
-To execute the ingestion process(__main_etl_processes.py__ application):
-* a Postgres database instance created at AWS RDS.
-* config.ini file filled and available on __~/.config__ folder
-* python 3.6
-* make
-
 Execution:
-* Run: ```make ```
+* Run: ```make ``` to create the environment
 
 ## Run
 Start your python virtualenv with ```source .venv/bin/activate```
 
-* Run: ```make run``` to start the main process.
+* Run: ```make run``` to start the main ingestion process.
