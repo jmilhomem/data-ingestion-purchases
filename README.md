@@ -30,7 +30,7 @@ https://www.kaggle.com/c/acquire-valued-shoppers-challenge/data?select=offers.cs
 ## Applications description:
 
 - __main_ingestion.py__ - It drops the transaction raw table if it exists, then create the transaction raw table if it not exists. Finally, it ingests the data from the csv file stored into /data folder.
-- __main_etl_processes.py__ - It executes the whole pipeline as following:
+- __main_etl_processes.py__ - It executes the whole data pipeline (GetDBT + Python) as following:
 1. Execute the dbt seed to import the files.
 2. Execute the main_ingestion.py application.
 3. Execute the dbt run to execute the whole etl pipeline.
@@ -38,19 +38,19 @@ https://www.kaggle.com/c/acquire-valued-shoppers-challenge/data?select=offers.cs
 
 ## Dependencies:
 To execute the whole pipeline (__main_etl_processes.py__ application):
-  * get dbt installed and the dbt project cloned. Check more details here.
-  * a Postgres database instance created at AWS RDS.
-  * config.ini file filled and available on __~/.config__ folder
-  * python 3.6
-  * make
+* get dbt installed and the dbt project cloned. Check more details here.
+* a Postgres database instance created at AWS RDS.
+* config.ini file filled and available on __~/.config__ folder
+* python 3.6
+* make
 To execute the ingestion process(__main_etl_processes.py__ application):
-  * a Postgres database instance created at AWS RDS.
-  * config.ini file filled and available on __~/.config__ folder
-  * python 3.6
-  * make
+* a Postgres database instance created at AWS RDS.
+* config.ini file filled and available on __~/.config__ folder
+* python 3.6
+* make
 
-* Execution:
-   * Run: ```make ```
+Execution:
+* Run: ```make ```
 
 ## Run
 Start your python virtualenv with ```source .venv/bin/activate```
