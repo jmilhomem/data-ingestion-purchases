@@ -7,7 +7,7 @@
 ![alt text](https://blog.hotmart.com/blog/2019/07/BLOG_ciclo-de-compra-670x419.png)
 
 
-## DataFiles description:
+## Data File description:
 
 __transactions__ - contains transaction history for all customers for a period of at least 1 year prior to their offered incentive
 - __id__ - A unique id representing a customer
@@ -27,15 +27,14 @@ Reference:
 https://www.kaggle.com/c/acquire-valued-shoppers-challenge/data?select=offers.csv.gz  
 
 
-## Installation
-* Dependencies:
+## Dependencies:
   * get dbt installed and the dbt project cloned. Check more details here.
   * a postgres database instance created and configured. For this project, the AWS RDS instance is used.
-  * config.ini file filled and available on __~\.config__ folder
+  * config.ini file filled and available on __~/.config__ folder
   * python 3.6
   * make
 
-* OS X & Linux:
+* Execution:
    * Run: ```make ```
 
 ## Run
