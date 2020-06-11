@@ -29,12 +29,13 @@ https://www.kaggle.com/c/acquire-valued-shoppers-challenge/data?select=offers.cs
 
 ## Technical Description:
 
+This script contains 2 main modules:
 - __main_ingestion.py__ - It drops the transaction raw table if it exists, then create the transaction raw table if it not exists. Finally, it ingests the data from the csv file stored into /data folder.
 - __main_etl_processes.py__ - It executes the whole data pipeline (GetDBT + Python) as following:
-1. Execute the dbt seed to import the files.
-2. Execute the main_ingestion.py application.
-3. Execute the dbt run to execute the whole etl pipeline.
-4. Remove temporary log files
+  1. Execute the dbt seed to import the files.
+  2. Execute the main_ingestion.py application.
+  3. Execute the dbt run to execute the whole etl pipeline.
+  4. Remove temporary log files
 
 ## Dependencies:
 To execute the ingestion process(__main_ingestion.py__ application):
