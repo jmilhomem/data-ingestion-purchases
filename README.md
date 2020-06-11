@@ -39,7 +39,7 @@ https://www.kaggle.com/c/acquire-valued-shoppers-challenge/data?select=offers.cs
 ## Dependencies:
 To execute the ingestion process(__main_ingestion.py__ application):
 * a Postgres database instance created at AWS RDS.
-* config.ini file filled and available on __~/.config__ folder
+* config.ini file filled and available on your __~/.config__ folder. Please, consider the /.config/config.ini template.
 * python 3.6
 * make
 

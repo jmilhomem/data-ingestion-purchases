@@ -9,9 +9,7 @@ all:
 	pip install virtualenv
 	virtualenv -p python3 $(VIRTUALENV_DIR)
 	$(PIP) install --upgrade pip
-	#$(PIP) install -r requirements.txt
-	#python -m pip install psycopg2-binary
 	$(PIP) install -r requirements.txt
 
 run:
-	python -B main_ingestion.py
+	python main_ingestion.py
