@@ -44,7 +44,7 @@ To execute the ingestion process(__main_ingestion.py__ application):
 * make
 
 To execute the whole pipeline (__main_etl_processes.py__ application):
-* get dbt installed and the dbt project cloned. Check more details here.
+* get dbt installed and the [dbt project cloned](https://github.com/jmilhomem/dbt_purchases_project) 
 * a Postgres database instance created at AWS RDS.
 * config.ini file filled and available on __~/.config__ folder
 * python 3.6
