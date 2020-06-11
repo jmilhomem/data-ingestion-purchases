@@ -40,14 +40,14 @@ This script contains 2 main modules:
 ## Dependencies:
 To execute the ingestion process(__main_ingestion.py__ application):
 * a Postgres database instance created at AWS RDS.
-* config.ini file filled and available on your __~/.config__ folder. Please, consider the /.config/config.ini template.
+* config.ini file filled and available in your __~/.config__ folder. Please, consider the /.config/config.ini template.
 * python 3.6
 * make
 
 To execute the whole pipeline (__main_etl_processes.py__ application):
 * get dbt installed and the [dbt project cloned](https://github.com/jmilhomem/dbt_purchases_project) 
 * a Postgres database instance created at AWS RDS.
-* config.ini file filled and available on __~/.config__ folder
+* config.ini file filled and available in __~/.config__ folder
 * python 3.6
 * make  
 
