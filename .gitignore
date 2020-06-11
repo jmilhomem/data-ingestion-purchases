@@ -106,5 +106,3 @@ venv.bak/
 
 authentication_gsheet.json
 .old/
-
-logs/
