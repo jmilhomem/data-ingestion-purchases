@@ -42,7 +42,7 @@ To execute the whole pipeline (__main_etl_processes.py__ application):
 * a Postgres database instance created at AWS RDS.
 * config.ini file filled and available on __~/.config__ folder
 * python 3.6
-* make
+* make  
 To execute the ingestion process(__main_etl_processes.py__ application):
 * a Postgres database instance created at AWS RDS.
 * config.ini file filled and available on __~/.config__ folder
