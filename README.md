@@ -4,7 +4,7 @@
 > 1. Ingest the raw data from transactions.csv file
 > 2. Execute the whole pipeline: ingesting the transactions.file data + dbt process.
 
-![alt text](https://res.cloudinary.com/amarotech/image/fetch/c_limit,f_auto,dpr_1,w_600,q_auto:best/v1/https://amaro.cdn.prismic.io/amaro/be3c11fbf5d2f62ca7cc6df63794add2953fd837_20190904-amaro-homepage-cards-desk-sep-week02-02.jpg)
+![alt text](https://blog.hotmart.com/blog/2019/07/BLOG_ciclo-de-compra-670x419.png)
 
 
 ## DataFiles description:
