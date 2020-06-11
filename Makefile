@@ -4,9 +4,6 @@ SHELL := /bin/bash
 VIRTUALENV_DIR=.env
 PYTHON=${VIRTUALENV_DIR}/bin/python
 PIP=${VIRTUALENV_DIR}/bin/pip
-INTEGRATION_PATH=tests/test_integration.py
-stage=dev
-env=local
 
 all:
 	pip install virtualenv
@@ -15,7 +12,4 @@ all:
 	$(PIP) install -r requirements.txt
 
 run:
-	python -B main.py $(stage) $(env)
-
-test:
-	py.test --verbose -s --disable-pytest-warnings --color=yes $(INTEGRATION_PATH)
+	python -B main_ingestion.py
