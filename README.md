@@ -35,7 +35,8 @@ This script contains 2 main modules:
   1. Execute the __dbt seed__ to import the files.
   2. Execute the __main_ingestion.py__ application.
   3. Execute the __dbt run__ to execute the whole etl pipeline.
-  4. Remove temporary log files
+  4. Execute the __dbt test__ to execute the tests defined for the models.
+  5. Remove temporary log files
 
 ## Dependencies:
 To execute the ingestion process(__main_ingestion.py__ application):

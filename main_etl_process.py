@@ -35,15 +35,29 @@ def main_etl_process():
             os.system("./pipeline/dbt_execution.sh")
             result_dbt_run = import_dbt_log("logs/temp/dbt_run.log")    
 
-            if result_dbt_run == "Completed successfully":    
+            if result_dbt_run == "Completed successfully":
+                log.info("DBT Run executed.")    
 
-                log.info("Remove temporary log files")
-                os.system("rm -r logs/temp/*")    
+                log.info("Execute DBT Test")
+                os.system("./pipeline/dbt_test.sh")
+                result_dbt_test = import_dbt_log("logs/temp/dbt_test.log")    
 
-                subject = 'ETL Process - Completed successfully'
-                send_email(subject, recipient, to, subject, user, password)    
+                if result_dbt_test == "Completed successfully":
+                    log.info("DBT Test executed.")   
 
-                log.info("Completed successfully")
+                    log.info("Remove temporary log files")
+                    os.system("rm -r logs/temp/*")    
+
+                    subject = 'ETL Process - Completed successfully'
+                    send_email(subject, recipient, to, subject, user, password)    
+
+                    log.info("Completed successfully")
+
+                else:
+                    subject = 'ETL Process - Error during dbt execution!'
+                    send_email(subject, recipient, to, subject, user, password)
+                    log.error("Failed during dbt execution!")
+
             else:
                 subject = 'ETL Process - Error during dbt execution!'
                 send_email(subject, recipient, to, subject, user, password)
