@@ -1,5 +1,5 @@
 
-# Purchases Application processes
+# Purchases Data Pipeline Project
 > This application is responsible for:
 > 1. Ingest the raw data from transactions.csv file
 > 2. Execute the whole pipeline: ingesting the transactions.file data + dbt process.
