@@ -54,4 +54,4 @@ Execution:
 ## Run
 Start your python virtualenv with ```source .venv/bin/activate```
 
-* Run: ```make run``` to start the main ingestion process.
+* Run: ```make run``` to start the full ETL process.
