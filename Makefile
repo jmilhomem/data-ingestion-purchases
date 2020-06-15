@@ -13,4 +13,4 @@ all:
 	$(PIP) install -r requirements.txt
 
 run:
-	python main_ingestion.py
+	python main_etl_process.py

@@ -6,15 +6,11 @@ from utils.app_logging import define_log
 from utils.import_files import import_dbt_log
 from utils.import_files import import_ingestion_log
 from utils.send_email import send_email
+from pipeline.ingestion import main_ingestion 
 
 
-def main_etl_process():
+def main_etl_process(to, user, password, recipient, enginedb, schema, table, file):
     """Execute the whole ETL process."""
-    to = config["email_to"]
-    user = config["email_user"]
-    password = config["email_password"]
-    recipient = config["email_recipient"]    
-
     log.info("Execute the ./dbt_seed.sh.")
     os.system("./pipeline/dbt_seed.sh")    
 
@@ -25,14 +21,15 @@ def main_etl_process():
         log.info("DBT Seed executed.")    
 
         log.info("Execute Ingestion Process")
-        os.system("python main_ingestion.py")
+        main_ingestion(enginedb, schema, table, file)
         os.system("tail -n2 logs/logs.log >> logs/temp/ingestion.log")
-        result_ingestion = import_ingestion_log("logs/temp/ingestion.log")    
+        result_ingestion = import_ingestion_log("logs/temp/ingestion.log")
 
-        if result_ingestion == "Bulk Insert done successfully.":    
+        if result_ingestion == "Insert done successfully.":    
 
             log.info("Execute DBT Process")
             os.system("./pipeline/dbt_execution.sh")
+
             result_dbt_run = import_dbt_log("logs/temp/dbt_run.log")    
 
             if result_dbt_run == "Completed successfully":
@@ -43,7 +40,7 @@ def main_etl_process():
                 result_dbt_test = import_dbt_log("logs/temp/dbt_test.log")    
 
                 if result_dbt_test == "Completed successfully":
-                    log.info("DBT Test executed.")   
+                    log.info("DBT Test executed.")  
 
                     log.info("Remove temporary log files")
                     os.system("rm -r logs/temp/*")    
@@ -78,4 +75,15 @@ if __name__ == "__main__":
     log = define_log()
     log.info("Ingestion Process Started.")
     config = config()
-    main_etl_process()
+
+    to = config["email_to"]
+    user = config["email_user"]
+    password = config["email_password"]
+    recipient = config["email_recipient"]  
+
+    enginedb = config["enginedb"]
+    schema = config["schema"]
+    table = config["table"]
+    file = config["file"] 
+
+    main_etl_process(to, user, password, recipient, enginedb, schema, table, file)
